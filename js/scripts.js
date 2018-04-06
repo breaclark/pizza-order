@@ -1,10 +1,9 @@
 function Pizza(baseValue) {
-  this.toppings = [];
   this.size = baseValue;
+  this.toppings = [];
 };
 
-function Topping(name, price) {
-    this.name = name;
+function Topping(price) {
     this.price = price;
 }
 
@@ -21,9 +20,13 @@ Pizza.prototype.calculatePrice = function () {
 };
 
 
-function makePizza(baseValue, toppingArray){
+function makePizza(baseValue, toppingsArray){
   pizza = new Pizza(baseValue);
-  pizza.addToppings(toppingArray);
+  var toppingObjectArray = toppingsArray.map(function(topping){
+    var toppingInstance = new Topping(topping);
+    return toppingInstance;
+  });
+  pizza.addToppings(toppingObjectArray);
   return pizza.calculatePrice();
 };
 
@@ -31,13 +34,13 @@ function makePizza(baseValue, toppingArray){
 $(document).ready(function() {
   $("#pizza-order").submit(function(event){
     event.preventDefault();
-    var crust = new Topping("crust", parseInt($("#crust").val()));
-    var sauce = new Topping("sauce", parseInt($("#sauce").val()));
-    var cheese = new Topping("cheese", parseInt($("#cheese").val()));
-    var meat = new Topping("meat", parseInt($("#meat").val()));
-    var veggie = new Topping("veggie", parseInt($("#veggie").val()));
-    var special = new Topping("special", parseInt($("#special").val()));
-    var toppingsArray = [crust, sauce, cheese, meat, veggie, special]
-    console.log(makePizza(parseInt($("#size").val()), toppingsArray));
+    var crust = parseInt($("#crust").val());
+    var sauce = parseInt($("#sauce").val());
+    var cheese = parseInt($("#cheese").val());
+    var meat = parseInt($("#meat").val());
+    var veggie = parseInt($("#veggie").val());
+    var special = parseInt($("#special").val());
+    var toppingsArray = [crust, sauce, cheese, meat, veggie, special];
+    $("#result").text(makePizza(parseInt($("#size").val()), toppingsArray));
   });
 });
