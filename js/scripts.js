@@ -139,12 +139,22 @@ $(document).ready(function() {
     var crust = parseInt($("#crust").val());
     var sauce = parseInt($("#sauce").val());
     var cheese = parseInt($("#cheese").val());
-    var meat = parseInt($("#meat").val());
-    var veggie = parseInt($("#veggie").val());
-    var special = parseInt($("#special").val());
-    var toppingsArray = [crust, sauce, cheese, meat, veggie, special];
+    var toppingsArray = [crust, sauce, cheese];
+    $("input:checkbox[name=meat]:checked").each(function(){
+      var meat = parseInt($(this).val());
+      toppingsArray.push(meat);
+    });
+    $("input:checkbox[name=veggie]:checked").each(function(){
+      var veggie = parseInt($(this).val());
+      toppingsArray.push(veggie);
+    });
+    $("input:checkbox[name=special]:checked").each(function(){
+      var special = parseInt($(this).val());
+      toppingsArray.push(special);
+    });
     $("#result").text("$" + makePizza(parseInt($("#size").val()), toppingsArray));
   });
+
   $(".form-control").change(function(){
     pizzaSizeAdjuster($("#size option:selected").text());
     pizzaCrustAdjuster($("#crust option:selected").text());
