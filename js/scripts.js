@@ -185,7 +185,14 @@ $(document).ready(function() {
   });
 
   $("#collapse").click(function() {
-    $("#top-of-page").hide();
-    $("#order-button-div").hide();
+    $("#top-of-page").remove();
+    $("#order-button-div").remove();
+    $("img").addClass("spin");
+    $("#after-order").show();
+    $("h1").css("margin-bottom","100px");
+  });
+
+  $("#refresh").click(function() {
+    location.reload();
   });
 });
