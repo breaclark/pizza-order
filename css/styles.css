@@ -1,5 +1,32 @@
-#pizza-img, #sauce-img #cheese-img {
+
+
+#pizza-img {
   width: 30%;
   display: block;
   margin: auto;
+  left: 0;
+  right: 0;
+  position: absolute;
+}
+
+#sauce-img {
+  z-index: 2;
+  width: 25%;
+  display: block;
+  margin: auto;
+  margin-top: 2%;
+  left: 0;
+  right: 0;
+  position: absolute;
+}
+
+#cheese-img {
+  z-index: 3;
+  width: 23%;
+  display: block;
+  margin: auto;
+  margin-top: 3%;
+  left: 0;
+  right: 0;
+  position: absolute;
 }
