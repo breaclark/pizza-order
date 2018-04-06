@@ -1,14 +1,18 @@
-function Pizza(size) {
+function Pizza(size, baseValue) {
   this.size = size;
   this.extras = [];
-  this.price = 5;
-}
+  this.price = baseValue;
+};
+
+Pizza.prototype.calculatePrice = function () {
+
+};
 
 
-function makePizza(size, toppings){
-  pizza = new Pizza(size);
+function makePizza(size, baseValue, toppings){
+  pizza = new Pizza(size,baseValue);
   return pizza.price;
-}
+};
 
 
 
@@ -16,6 +20,6 @@ function makePizza(size, toppings){
 $(document).ready(function() {
   $("#pizza-order").submit(function(event){
     event.preventDefault();
-    console.log(makePizza("mini","nothing"));
+    console.log(makePizza("mini", $("#size").val(), "nothing"));
   });
 });
