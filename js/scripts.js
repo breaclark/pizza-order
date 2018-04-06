@@ -43,6 +43,15 @@ function pizzaSizeAdjuster(sizeValue){
   }
 }
 
+function pizzaCrustAdjuster(crustValue){
+  if (crustValue === "Thin and Crispy") {
+    $("#pizza-img").attr("src", "img/thin.png")
+  } else if (crustValue === "Stuffed Crust") {
+    $("#pizza-img").attr("src", "img/stuffed.png")
+  } else {
+    $("#pizza-img").attr("src", "img/pan.png")
+  }
+}
 
 $(document).ready(function() {
   $("#pizza-order").submit(function(event){
@@ -58,5 +67,6 @@ $(document).ready(function() {
   });
   $(".form-control").change(function(){
     pizzaSizeAdjuster($("#size option:selected").text());
+    pizzaCrustAdjuster($("#crust option:selected").text())
   });
 });
