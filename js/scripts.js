@@ -187,9 +187,14 @@ $(document).ready(function() {
   $("#collapse").click(function() {
     $("#top-of-page").remove();
     $("#order-button-div").remove();
+    $("#pizza-img").css("width","50%");
+    $("#pizza-img").css("margin-top","15%");
+    $("#sauce-img").css("width","40%");
+    $("#sauce-img").css("margin-top","19%");
+    $(".sizing").css("width","38%");
+    $(".sizing").css("margin-top","20%");
     $("img").addClass("spin");
     $("#after-order").show();
-    $("h1").css("margin-bottom","100px");
   });
 
   $("#refresh").click(function() {
