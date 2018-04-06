@@ -2,14 +2,15 @@
 <html>
   <head>
     <link rel="stylesheet" href="css/bootstrap.css">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
     <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="js/scripts.js"></script>
-    <title>Pizza Order!</title>
+    <title>Pizzacino Online Ordering</title>
   </head>
   <body>
     <div class="container">
-      <h1>Order a Pizza</h1>
+      <h1>Pizzacino Online Pizza Order</h1>
       <form id="pizza-order">
         <div class="form-group">
           <h3>Size</h3>
@@ -20,49 +21,56 @@
             <option value=14>Large</option>
           </select>
         </div>
-        <div class="form-group">
-          <h3>Base</h3>
-          <h5>Crust</h5>
-          <select class="form-control" id="crust">
-            <option value=0>Pan Pizza</option>
-            <option value=1>Thin and Crispy</option>
-            <option value=1>Stuffed Crust</option>
-          </select>
-          <h5>Sauce</h5>
-          <select class="form-control" id="sauce">
-            <option value=0>Marinara</option>
-            <option value=1>Barbecue</option>
-          </select>
-          <h5>Cheese</h5>
-          <select class="form-control" id="cheese">
-            <option value=0>House Cheese Mix</option>
-            <option value=1>Mozarella</option>
-          </select>
+        <div class="row">
+          <div class="col col-md">
+            <div class="form-group">
+              <h3>Base</h3>
+              <h5>Crust</h5>
+              <select class="form-control" id="crust">
+                <option value=0>Pan Pizza</option>
+                <option value=1>Thin and Crispy</option>
+                <option value=1>Stuffed Crust</option>
+              </select>
+              <h5>Sauce</h5>
+              <select class="form-control" id="sauce">
+                <option value=0>Marinara</option>
+                <option value=1>Barbecue</option>
+              </select>
+              <h5>Cheese</h5>
+              <select class="form-control" id="cheese">
+                <option value=0>House Cheese Mix</option>
+                <option value=1>Mozarella</option>
+              </select>
+            </div>
+          </div>
+          <div class="col col-md">
+            <div class="form-group">
+              <h3>Toppings</h3>
+              <h5>Meat</h5>
+              <div class="form-control" id="meat2">
+                <input type="checkbox" name="meat" id="pepperoni" value=1>Pepperoni<br>
+                <input type="checkbox" name="meat" id="ham" value=1>Ham<br>
+                <input type="checkbox" name="meat" id="bacon" value=1>Bacon<br>
+              </div>
+              <h5>Veggies</h5>
+              <div class="form-control" id="veggie2">
+                <input type="checkbox" name="veggie" id="mushrooms" value=1>Mushrooms<br>
+                <input type="checkbox" name="veggie" id="olives" value=1>Olives<br>
+                <input type="checkbox" name="veggie" id="tomatoes" value=1>Tomatoes<br>
+              </div>
+              <h5>Specialty</h5>
+              <div class="form-control" id="special2">
+                <input type="checkbox" name="special" id="avocado" value=3>Avocado<br>
+                <input type="checkbox" name="special" id="garlic" value=3>Garlic<br>
+                <input type="checkbox" name="special" id="potatoes" value=3>Sliced Potatoes<br>
+              </div>
+            </div>
+            <button type="submit" id="order-button" class="btn btn-primary"></button>
+          </div>
         </div>
-        <div class="form-group">
-          <h3>Toppings</h3>
-          <h5>Meat</h5>
-          <div class="form-control" id="meat2">
-            <input type="checkbox" name="meat" id="pepperoni" value=1>Pepperoni<br>
-            <input type="checkbox" name="meat" id="ham" value=1>Ham<br>
-            <input type="checkbox" name="meat" id="bacon" value=1>Bacon<br>
-          </div>
-          <h5>Veggies</h5>
-          <div class="form-control" id="veggie2">
-            <input type="checkbox" name="veggie" id="mushrooms" value=1>Mushrooms<br>
-            <input type="checkbox" name="veggie" id="olives" value=1>Olives<br>
-            <input type="checkbox" name="veggie" id="tomatoes" value=1>Tomatoes<br>
-          </div>
-          <h5>Specialty</h5>
-          <div class="form-control" id="special2">
-            <input type="checkbox" name="special" id="avocado" value=3>Avocado<br>
-            <input type="checkbox" name="special" id="garlic" value=3>Garlic<br>
-            <input type="checkbox" name="special" id="potatoes" value=3>Sliced Potatoes<br>
-          </div>
-        </div>
-        <button type="submit" name="button" class="btn btn-primary">Order my Pizza!</button>
       </form>
-      <div class="jumbotron" id="result">
+      <div id="result">
+        Order Total: $5
       </div>
       <div id="pizza-result">
         <img id="pizza-img" src="img/pan.png" alt="pizza">

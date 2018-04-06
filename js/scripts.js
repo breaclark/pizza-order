@@ -152,7 +152,7 @@ $(document).ready(function() {
       var special = parseInt($(this).val());
       toppingsArray.push(special);
     });
-    $("#result").text("$" + makePizza(parseInt($("#size").val()), toppingsArray));
+    $("#result").text("Order Total: $" + makePizza(parseInt($("#size").val()), toppingsArray));
   });
 
   $(".form-control").change(function(){

@@ -1,4 +1,31 @@
+h1, h3, h5, #result {
+  font-family: 'Permanent Marker', cursive;
+  border-radius: 5px;
+  padding-left: 10px;
+}
 
+h1 {
+  background-color: #d82727;
+  color: #f9f9f4;
+  padding: 5px;
+  text-align: center;
+}
+
+h5 {
+  background-color: #d82727;
+  color: #f9f9f4;
+}
+
+#order-button {
+  display: none;
+}
+
+#result {
+  font-size: 45px;
+  background-color: #d82727;
+  color: #f9f9f4;
+  margin-bottom: 20px;
+}
 
 #pizza-img {
   width: 30%;
