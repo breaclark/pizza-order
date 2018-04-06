@@ -24,7 +24,7 @@ Pizza.prototype.calculatePrice = function () {
 Pizza.prototype.listPizzaToppings = function () {
   var pizzaString = this.name + " ";
   this.toppings.forEach(function(topping){
-    pizzaString += topping.name + "\n";
+    pizzaString += topping.name + "<br>";
   });
   return pizzaString;
 };
@@ -178,8 +178,9 @@ $(document).ready(function() {
   });
 
   $("#pizza-result").hover(function(){
-    console.log(pizza.listPizzaToppings());
-    $("#pizza-result").attr("data-content",pizza.listPizzaToppings());
-    $("#pizza-result").popover('show');
+    $("#toppings-box p").html(pizza.listPizzaToppings());
+    $("#toppings-box p").show();
+  }, function() {
+    $("#toppings-box p").hide();
   });
 });
