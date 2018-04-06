@@ -179,5 +179,7 @@ $(document).ready(function() {
 
   $("#pizza-result").hover(function(){
     console.log(pizza.listPizzaToppings());
+    $("#pizza-result").attr("data-content",pizza.listPizzaToppings());
+    $("#pizza-result").popover('show');
   });
 });
