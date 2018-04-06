@@ -16,6 +16,10 @@ h5 {
   color: #f9f9f4;
 }
 
+.btn {
+  box-shadow: 10px 10px 5px -4px rgba(0,0,0,0.17);
+}
+
 #order-button {
   display: none;
 }
