@@ -31,6 +31,11 @@ function makePizza(baseValue, toppingsArray){
 };
 
 //front end logic
+function pizzaSizeAdjuster(sizeValue){
+
+}
+
+
 $(document).ready(function() {
   $("#pizza-order").submit(function(event){
     event.preventDefault();
@@ -45,6 +50,7 @@ $(document).ready(function() {
   });
   $(".form-control").change(function(){
     console.log("a selector was changed");
+    console.log($("#size option:selected").text());
     //basic small pizza to start, change as go along and change stuff
   });
 });
