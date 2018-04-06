@@ -21,17 +21,23 @@ Pizza.prototype.calculatePrice = function () {
 };
 
 
-function makePizza(baseValue, toppings){
+function makePizza(baseValue, toppingArray){
   pizza = new Pizza(baseValue);
+  pizza.addToppings(toppingArray);
   return pizza.calculatePrice();
 };
-
-
 
 //front end logic
 $(document).ready(function() {
   $("#pizza-order").submit(function(event){
     event.preventDefault();
-    console.log(makePizza($("#size").val(), "nothing"));
+    var crust = new Topping("crust", parseInt($("#crust").val()));
+    var sauce = new Topping("sauce", parseInt($("#sauce").val()));
+    var cheese = new Topping("cheese", parseInt($("#cheese").val()));
+    var meat = new Topping("meat", parseInt($("#meat").val()));
+    var veggie = new Topping("veggie", parseInt($("#veggie").val()));
+    var special = new Topping("special", parseInt($("#special").val()));
+    var toppingsArray = [crust, sauce, cheese, meat, veggie, special]
+    console.log(makePizza(parseInt($("#size").val()), toppingsArray));
   });
 });
