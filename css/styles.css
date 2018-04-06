@@ -1,4 +1,4 @@
-#pizza-img {
+#pizza-img, #sauce-img #cheese-img {
   width: 30%;
   display: block;
   margin: auto;
