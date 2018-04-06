@@ -32,7 +32,15 @@ function makePizza(baseValue, toppingsArray){
 
 //front end logic
 function pizzaSizeAdjuster(sizeValue){
-
+  if (sizeValue === "Small") {
+    $("#pizza-img").css("width","50%");
+  } else if (sizeValue === "Medium") {
+    $("#pizza-img").css("width","70%");
+  } else if (sizeValue === "Large") {
+    $("#pizza-img").css("width","90%");
+  } else {
+    $("#pizza-img").css("width","30%");
+  }
 }
 
 
@@ -49,8 +57,6 @@ $(document).ready(function() {
     $("#result").text("$" + makePizza(parseInt($("#size").val()), toppingsArray));
   });
   $(".form-control").change(function(){
-    console.log("a selector was changed");
-    console.log($("#size option:selected").text());
-    //basic small pizza to start, change as go along and change stuff
+    pizzaSizeAdjuster($("#size option:selected").text());
   });
 });
