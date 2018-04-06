@@ -30,3 +30,15 @@
   right: 0;
   position: absolute;
 }
+
+#meat-img, #veggie-img, #special-img {
+  display: block;
+  display: none;
+  z-index: 4;
+  width: 23%;
+  margin: auto;
+  margin-top: 3%;
+  left: 0;
+  right: 0;
+  position: absolute;
+}
