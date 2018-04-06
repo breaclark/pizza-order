@@ -188,11 +188,11 @@ $(document).ready(function() {
     $("#top-of-page").remove();
     $("#order-button-div").remove();
     $("#pizza-img").css("width","50%");
-    $("#pizza-img").css("margin-top","15%");
+    $("#pizza-img").css("margin-top","11%");
     $("#sauce-img").css("width","40%");
-    $("#sauce-img").css("margin-top","19%");
+    $("#sauce-img").css("margin-top","15%");
     $(".sizing").css("width","38%");
-    $(".sizing").css("margin-top","20%");
+    $(".sizing").css("margin-top","16%");
     $("img").addClass("spin");
     $("#after-order").show();
   });
