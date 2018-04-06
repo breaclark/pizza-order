@@ -36,26 +36,26 @@ function pizzaSizeAdjuster(sizeValue){
     $("#pizza-img").css("width","50%");
     $("#sauce-img").css("width","40%");
     $("#sauce-img").css("margin-top","4%");
-    $("#cheese-img, #meat-img, #veggie-img, #special-img").css("width","38%");
-    $("#cheese-img, #meat-img, #veggie-img, #special-img").css("margin-top","5%");
+    $("#cheese-img, .meat-img, .veggie-img, #special-img").css("width","38%");
+    $("#cheese-img, .meat-img, .veggie-img, #special-img").css("margin-top","5%");
   } else if (sizeValue === "Medium") {
     $("#pizza-img").css("width","70%");
     $("#sauce-img").css("width","60%");
     $("#sauce-img").css("margin-top","4%");
-    $("#cheese-img, #meat-img, #veggie-img, #special-img").css("width","55%");
-    $("#cheese-img, #meat-img, #veggie-img, #special-img").css("margin-top","6%");
+    $("#cheese-img, .meat-img, .veggie-img, #special-img").css("width","55%");
+    $("#cheese-img, .meat-img, .veggie-img, #special-img").css("margin-top","6%");
   } else if (sizeValue === "Large") {
     $("#pizza-img").css("width","90%");
     $("#sauce-img").css("width","75%");
     $("#sauce-img").css("margin-top","7%");
-    $("#cheese-img, #meat-img, #veggie-img, #special-img").css("width","70%");
-    $("#cheese-img, #meat-img, #veggie-img, #special-img").css("margin-top","9%");
+    $("#cheese-img, .meat-img, .veggie-img, #special-img").css("width","70%");
+    $("#cheese-img, .meat-img, .veggie-img, #special-img").css("margin-top","9%");
   } else {
     $("#pizza-img").css("width","30%");
     $("#sauce-img").css("width","25%");
     $("#sauce-img").css("margin-top","2%");
-    $("#cheese-img, #meat-img, #veggie-img, #special-img").css("width","23%");
-    $("#cheese-img, #meat-img, #veggie-img, #special-img").css("margin-top","3%");
+    $("#cheese-img, .meat-img, .veggie-img, #special-img").css("width","23%");
+    $("#cheese-img, .meat-img, .veggie-img, #special-img").css("margin-top","3%");
   }
 }
 
@@ -86,40 +86,35 @@ function pizzaCheeseAdjuster(cheeseValue){
 }
 
 function pizzaMeatAdjuster(meatValue){
-  console.log(meatValue);
+  $(".meat-img").hide();
   meatValue.each(function(){
-    var veggie = $(this).attr("id");
-    console.log(veggie);
+    var meat = $(this).attr("id");
+    if(meat === "pepperoni") {
+      $("#pepperoni-img").show();
+    }
+    if(meat === "ham") {
+      $("#ham-img").show();
+    }
+    if(meat === "bacon") {
+      $("#bacon-img").show();
+    }
   });
-  // if (meatValue === "Pepperoni") {
-  //   $("#meat-img").show();
-  //   $("#meat-img").attr("src", "img/pepperoni.png")
-  // } else if (meatValue === "Ham") {
-  //   $("#meat-img").show();
-  //   $("#meat-img").attr("src", "img/ham.png")
-  // } else if (meatValue === "Bacon") {
-  //   $("#meat-img").show();
-  //   $("#meat-img").attr("src", "img/bacon.png")
-  // } else {
-  //   $("#meat-img").attr("src", "");
-  //   $("#meat-img").hide();
-  // }
 }
 
 function pizzaVeggieAdjuster(veggieValue){
-  // if (veggieValue === "Mushrooms") {
-  //   $("#veggie-img").show();
-  //   $("#veggie-img").attr("src", "img/mushroom.png")
-  // } else if (veggieValue === "Olives") {
-  //   $("#veggie-img").show();
-  //   $("#veggie-img").attr("src", "img/olive.png")
-  // } else if (veggieValue === "Tomatoes") {
-  //   $("#veggie-img").show();
-  //   $("#veggie-img").attr("src", "img/tomato.png")
-  // } else {
-  //   $("#veggie-img").attr("src", "");
-  //   $("#veggie-img").hide();
-  // }
+  $(".veggie-img").hide();
+  veggieValue.each(function(){
+    var veggie = $(this).attr("id");
+    if(veggie === "mushrooms") {
+      $("#mushroom-img").show();
+    }
+    if(veggie === "olives") {
+      $("#olive-img").show();
+    }
+    if(veggie === "tomatoes") {
+      $("#tomato-img").show();
+    }
+  });
 }
 
 function pizzaSpecialAdjuster(specialValue){
