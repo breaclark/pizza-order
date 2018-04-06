@@ -41,6 +41,9 @@ $(document).ready(function() {
     var veggie = parseInt($("#veggie").val());
     var special = parseInt($("#special").val());
     var toppingsArray = [crust, sauce, cheese, meat, veggie, special];
-    $("#result").text(makePizza(parseInt($("#size").val()), toppingsArray));
+    $("#result").text("$" + makePizza(parseInt($("#size").val()), toppingsArray));
+  });
+  $(".form-control").change(function(){
+    console.log("a selector was changed");
   });
 });
