@@ -42,40 +42,22 @@
         <div class="form-group">
           <h3>Toppings</h3>
           <h5>Meat</h5>
-          <select class="form-control" id="meat">
-            <option value=0>None</option>
-            <option value=1>Pepperoni</option>
-            <option value=1>Ham</option>
-            <option value=1>Bacon</option>
-          </select>
           <div class="form-control" id="meat2">
-            <input type="checkbox" name="meat" value=1>Pepperoni<br>
-            <input type="checkbox" name="meat" value=1>Ham<br>
-            <input type="checkbox" name="meat" value=1>Bacon<br>
+            <input type="checkbox" name="meat" id="pepperoni" value=1>Pepperoni<br>
+            <input type="checkbox" name="meat" id="ham" value=1>Ham<br>
+            <input type="checkbox" name="meat" id="bacon" value=1>Bacon<br>
           </div>
           <h5>Veggies</h5>
-          <select class="form-control" id="veggie">
-            <option value=0>None</option>
-            <option value=1>Mushrooms</option>
-            <option value=1>Olives</option>
-            <option value=1>Tomatoes</option>
-          </select>
           <div class="form-control" id="veggie2">
-            <input type="checkbox" name="veggie" value=1>Mushrooms<br>
-            <input type="checkbox" name="veggie" value=1>Olives<br>
-            <input type="checkbox" name="veggie" value=1>Tomatoes<br>
+            <input type="checkbox" name="veggie" id="mushrooms" value=1>Mushrooms<br>
+            <input type="checkbox" name="veggie" id="olives" value=1>Olives<br>
+            <input type="checkbox" name="veggie" id="tomatoes" value=1>Tomatoes<br>
           </div>
           <h5>Specialty</h5>
-          <select class="form-control" id="special">
-            <option value=0>None</option>
-            <option value=3>Avocado</option>
-            <option value=3>Garlic</option>
-            <option value=3>Sliced Potatoes</option>
-          </select>
           <div class="form-control" id="special2">
-            <input type="checkbox" name="special" value=3>Avocado<br>
-            <input type="checkbox" name="special" value=3>Garlic<br>
-            <input type="checkbox" name="special" value=3>Sliced Potatoes<br>
+            <input type="checkbox" name="special" id="avocado" value=3>Avocado<br>
+            <input type="checkbox" name="special" id="garlic" value=3>Garlic<br>
+            <input type="checkbox" name="special" id="potatoes" value=3>Sliced Potatoes<br>
           </div>
         </div>
         <button type="submit" name="button" class="btn btn-primary">Order my Pizza!</button>
@@ -86,7 +68,10 @@
         <img id="pizza-img" src="img/pan.png" alt="pizza">
         <img id="sauce-img" src="img/marinara.png" alt="pizza">
         <img id="cheese-img" src="img/house.png" alt="pizza">
-        <img id="meat-img" src="" alt="pizza">
+        <img class="meat-img" id="pepperoni-img" src="" alt="pizza">
+        <img class="meat-img" id="ham-img" src="" alt="pizza">
+        <img class="meat-img" id="bacon-img" src="" alt="pizza">
+        <img class="meat-img" src="" alt="pizza">
         <img id="veggie-img" src="" alt="pizza">
         <img id="special-img" src="" alt="pizza">
       </div>
