@@ -1,4 +1,5 @@
-function Pizza(baseValue) {
+function Pizza(size, baseValue) {
+  this.name = size;
   this.size = baseValue;
   this.toppings = [];
 };
@@ -20,9 +21,18 @@ Pizza.prototype.calculatePrice = function () {
   return pizzaPrice;
 };
 
+Pizza.prototype.listPizzaToppings = function () {
+  var pizzaString = this.name + " ";
+  this.toppings.forEach(function(topping){
+    pizzaString += topping.name + "\n";
+  });
+  return pizzaString;
+};
 
-function makePizza(baseValue, toppingsArray){
-  pizza = new Pizza(baseValue);
+var pizza = new Pizza("Mini", 5);
+
+function makePizza(size, baseValue, toppingsArray){
+  pizza = new Pizza(size, baseValue);
   var toppingObjectArray = toppingsArray.map(function(topping){
     var toppingInstance = new Topping(topping[0], topping[1]);
     return toppingInstance;
@@ -153,7 +163,7 @@ $(document).ready(function() {
       var special = [$(this).attr("id") ,parseInt($(this).val())];
       toppingsArray.push(special);
     });
-    $("#result").text("Order Total: $" + makePizza(parseInt($("#size").val()), toppingsArray));
+    $("#result").text("Order Total: $" + makePizza($("#size option:selected").text(), parseInt($("#size").val()), toppingsArray));
   });
 
   $(".form-control").change(function(){
@@ -165,5 +175,9 @@ $(document).ready(function() {
     pizzaMeatAdjuster($("input:checkbox[name=meat]:checked"));
     pizzaVeggieAdjuster($("input:checkbox[name=veggie]:checked"));
     pizzaSpecialAdjuster($("input:checkbox[name=special]:checked"));
+  });
+
+  $("#pizza-result").hover(function(){
+    console.log(pizza.listPizzaToppings());
   });
 });
