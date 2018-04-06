@@ -45,5 +45,6 @@ $(document).ready(function() {
   });
   $(".form-control").change(function(){
     console.log("a selector was changed");
+    //basic small pizza to start, change as go along and change stuff
   });
 });
