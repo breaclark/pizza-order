@@ -3,8 +3,9 @@ function Pizza(baseValue) {
   this.toppings = [];
 };
 
-function Topping(price) {
-    this.price = price;
+function Topping(name, price) {
+  this.name = name;
+  this.price = price;
 };
 
 Pizza.prototype.addToppings = function (toppingArray) {
@@ -23,7 +24,7 @@ Pizza.prototype.calculatePrice = function () {
 function makePizza(baseValue, toppingsArray){
   pizza = new Pizza(baseValue);
   var toppingObjectArray = toppingsArray.map(function(topping){
-    var toppingInstance = new Topping(topping);
+    var toppingInstance = new Topping(topping[0], topping[1]);
     return toppingInstance;
   });
   pizza.addToppings(toppingObjectArray);
@@ -136,20 +137,20 @@ function pizzaSpecialAdjuster(specialValue){
 $(document).ready(function() {
   $("#pizza-order").submit(function(event){
     event.preventDefault();
-    var crust = parseInt($("#crust").val());
-    var sauce = parseInt($("#sauce").val());
-    var cheese = parseInt($("#cheese").val());
+    var crust = [$("#crust option:selected").text() , parseInt($("#crust").val())];
+    var sauce = [$("#sauce option:selected").text() , parseInt($("#sauce").val())];
+    var cheese = [$("#cheese option:selected").text() ,parseInt($("#cheese").val())];
     var toppingsArray = [crust, sauce, cheese];
     $("input:checkbox[name=meat]:checked").each(function(){
-      var meat = parseInt($(this).val());
+      var meat = [$(this).attr("id") ,parseInt($(this).val())];
       toppingsArray.push(meat);
     });
     $("input:checkbox[name=veggie]:checked").each(function(){
-      var veggie = parseInt($(this).val());
+      var veggie = [$(this).attr("id") ,parseInt($(this).val())];
       toppingsArray.push(veggie);
     });
     $("input:checkbox[name=special]:checked").each(function(){
-      var special = parseInt($(this).val());
+      var special = [$(this).attr("id") ,parseInt($(this).val())];
       toppingsArray.push(special);
     });
     $("#result").text("Order Total: $" + makePizza(parseInt($("#size").val()), toppingsArray));
