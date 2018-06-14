@@ -1,8 +1,8 @@
 # Pizza Order
 
-#### A pizza order form that uses javascript objects to compute the price for a pizza with various size/topping combinations. It can be seen in action at https://breatortilla.github.io/pizza-order/
+#### A pizza order form that uses javascript objects to compute the price for a pizza with various size/topping combinations. It can be seen in action at https://breaclark.github.io/pizza-order/
 
-#### By **Brea Borlas**
+#### By **Brea Clark**
 
 ### Specs
 | Spec | Input | Output |
@@ -36,4 +36,4 @@ _Email me at breatortilla@gmail.com for support_
 
 ### License
 
-Copyright (c) 2018 **_{Brea Borlas}_**
+Copyright (c) 2018 **Brea Clark**
